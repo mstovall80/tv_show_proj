@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Add a new show</title>
+</head>
+<body>
+  <a href="/create_show">Go back</a>
+    <form action="/create_show" method="POST">
+      {% csrf_token %}
+      <div class="col">
+          <div class="col">
+            <input type="text" class="form-control" value="{{create_show.title}}" placeholder="title" aria-label="title" name="title">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" value="{{create_show.network}}" placeholder="network" aria-label="network" name='network'>
+          </div>
+          <div class="col">
+              <input type="date" class="form-control" value="{{create_show.release_date}}" name="release_date">release_date</input>
+            </div>
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" name="description" id="floatingTextarea2" style="height: 100px"></textarea>
+              <label for="floatingTextarea2">Discription</label>
+            </div>
+            <div>
+              <input type="submit" value="add_show">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
